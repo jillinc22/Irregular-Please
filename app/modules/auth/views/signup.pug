@@ -1,0 +1,101 @@
+extends ../../../templates/master.pug
+
+block content
+    //--Stylesheets, scripts, etc..--//
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="/assets/popper/popper.min.js"></script>
+
+    link(rel="stylesheet" href="/stylesheets/home.css")
+    link(rel="stylesheet" href="/stylesheets/homemodal.css")
+    link(rel="stylesheet" href="/stylesheets/signup.css")
+
+    //--Navigation Bar
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#B22222;font-family:myFrostys;">
+    <a class="navbar-brand" href="/home">
+        <img src="/icons/calendar.png" width="30" height="30" class="d-inline-block align-top" alt="irregular please icon"> Irregular Please</a>
+            <a class="nav-link" href="/home">Home </a>
+            <a class="nav-link" href="#">Information</a>
+            <a class="nav-link" href="#">AboutUs</a>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+    <span class="navbar-text" id="navtextaccount">Do you have an account?
+    </span>
+    <ul class="navbar-nav" >
+        <li class="nav-item">
+        <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#myModal">Login</a>
+        </li>
+    </ul>
+
+    
+    <ul class="navbar-nav" >
+        <li class="nav-item">
+        <a class="nav-link" href="/signup" id="signup">Sign Up</a>
+        </li>
+    </ul>
+    </div>
+    </nav>
+
+    //----- Modal
+    <div class="container" id="modalLogin">
+            <div class="modal hide" id="myModal">
+            <div class="modal-header">
+                <img rel="image" src="/icons/login.png" style="width:40px;height:40px;">&nbsp;
+                <h3 style="color:black;">Login</h3>
+                <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action='home' name="login_form">
+                    <div class="form-group">
+                    <p>&nbsp;<i class="fa fa-envelope-o fa-2x" aria-hidden="true" ></i>&nbsp;&nbsp;<input type="email" name="user_email" id="modalemail" class="form-control float-right col-md-10" placeholder="emailaddress@gmail.com" required></p>
+                    </div>
+                    <p>&nbsp;&nbsp; <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>&nbsp; &nbsp;<input type="password" name="user_password" id="modalemail" class="form-control float-right col-md-10" placeholder="Password" size=33 required></p>
+                    <p><button type="submit" id="modalbutton" class="btn btn-primary float-right" position="right" style="background-color:#B22222;color:whitesmoke;border:none;">Sign in</button></p>
+                </form>
+            </br>
+            </br>
+            </div>
+            <div class="modal-footer float-right">Don't have an account yet? <a href="#" class="Register" style="color:#B22222;"> Register</a>
+            </div>
+            </div>
+    </div>
+
+    //- Registration Form
+    <div class="container">
+        <h1 class="well">Registration Form</h1>
+        <div class="col-lg-12 well">
+        <div class="row">
+                    <form method="POST" action="#">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>*First Name</label>
+                                    <input type="text" placeholder="First Name" class="form-control" required>
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>*Last Name</label>
+                                    <input type="text" placeholder="Last Name" class="form-control" required>
+                                </div>
+                            </div>					
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea placeholder="Enter Address Here.." rows="2" class="form-control"></textarea>
+                            </div>	
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                        <label>*Password</label>
+                                        <input type="password" placeholder="Password" class="form-control" required>
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                        <label>*Email Address</label>
+                                        <input type="email" placeholder="Email Address" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                        <button type="submit" id="buttonsignup" class="btn btn btn-info" >Submit</button>					
+                        </div>
+                    </form> 
+                    </div>
+        </div>
+        </div>

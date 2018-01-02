@@ -1,6 +1,6 @@
 extends ../../../templates/master.pug
 
-block content
+block body
     //--Stylesheets, scripts, etc..--//
     <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
@@ -61,38 +61,50 @@ block content
             </div>
     </div>
 
-    //- Registration Form
+        //---- Registration Form
     <div class="container">
-        <h1 class="well">Registration Form</h1>
+        <h1 class="well" style="font-family:myAcid;">Registration Form</h1>
         <div class="col-lg-12 well">
         <div class="row">
-                    <form method="POST" action="#">
+                    <form method="POST" action="/signup">
                         <div class="col-sm-12">
                             <div class="row">
-                                <div class="col-sm-6 form-group">
-                                    <label>*First Name</label>
-                                    <input type="text" placeholder="First Name" class="form-control" required>
+                                <div class="col-sm-6 form-group" >
+                                    <label style="font-family:myAcid;font-size:20;">*First Name</label>
+                                    <input type="text" placeholder="First Name" class="form-control" name="user_fname" required>
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label>*Last Name</label>
-                                    <input type="text" placeholder="Last Name" class="form-control" required>
+                                    <label style="font-family:myAcid;font-size:20;">*Last Name</label>
+                                    <input type="text" placeholder="Last Name" class="form-control" name="user_lname" required>
                                 </div>
                             </div>					
                             <div class="form-group">
-                                <label>Address</label>
-                                <textarea placeholder="Enter Address Here.." rows="2" class="form-control"></textarea>
-                            </div>	
+                                <label style="font-family:myAcid;font-size:20;">Address</label>
+                                <textarea placeholder="Enter Address Here.." rows="2" class="form-control" name="user_address"></textarea>
                             <div class="row">
                                 <div class="col-sm-6 form-group">
-                                        <label>*Password</label>
-                                        <input type="password" placeholder="Password" class="form-control" required>
+                                        <label style="font-family:myAcid;font-size:20;">*Email Address</label>
+                                        <input type="email" placeholder="Email Address" class="form-control" name="user_email" required>
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                        <label>*Email Address</label>
-                                        <input type="email" placeholder="Email Address" class="form-control" required>
+                                        <label style="font-family:myAcid;font-size:20;">*Password</label>
+                                        <input type="password" placeholder="Password" class="form-control"name="user_password" required>
                                 </div>
                             </div>
-                            
+
+
+                            //------- User type
+                            <label for="userType" style="font-family:myAcid;font-size:20;">*I am a/part of:</label>
+                            <select required id="userType" class="form-control col-sm-8" name="user_usertype">
+                                <option disabled="disabled" selected="selected" value="">Choose...</option>
+                                <option value="Student">Student</option>
+                                <option value="Officer">Class Officer</option>
+                                <option value="Org/Council">Organization/Student Council</option>
+                            </select>
+                            <p><small><strong>(if you belong to one or more category PLEASE SELECT STUDENT AS THE <u>LEAST OPTION</u>)</strong></small></p>
+                            </div>	
+                        
+
                         <button type="submit" id="buttonsignup" class="btn btn btn-info" >Submit</button>					
                         </div>
                     </form> 

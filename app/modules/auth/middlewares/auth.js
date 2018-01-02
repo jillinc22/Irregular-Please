@@ -20,4 +20,24 @@ exports.noAuthedadmin = (req, res, next) => {
     return next();
 }
 
+exports.hasAuthOrgCouncil = (req, res, next) => {
+    if (req.session && req.session.orgcouncil && Object.keys(req.session.orgcouncil).length > 0) return next();
+    return res.redirect('/home');
+}
+
+exports.noAuthOrgCouncil = (req, res, next) => {
+    if (req.session && req.session.orgcouncil && Object.keys(req.session.orgcouncil).length > 0) return res.redirect('/orgcouncil');
+    return next();
+}
+
+exports.hasAuthOfficer = (req, res, next) => {
+    if (req.session && req.session.officer && Object.keys(req.session.officer).length > 0) return next();
+    return res.redirect('/home');
+}
+
+exports.noAuthOrgOfficer = (req, res, next) => {
+    if (req.session && req.session.officer && Object.keys(req.session.officer).length > 0) return res.redirect('/officer');
+    return next();
+}
+
 

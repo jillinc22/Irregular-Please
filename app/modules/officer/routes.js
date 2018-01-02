@@ -1,18 +1,14 @@
 var router = require('express').Router();
 var authMiddleware = require('../auth/middlewares/auth');
 
-router.use(authMiddleware.hasAuth);
+router.use(authMiddleware.hasAuthOfficer);
 
 router.use('/', require('./home/routes'));
 
 router.use('/announcements', require('./announcements/routes'));
 
-router.use('/schedule', require('./schedule/routes'));
-
-router.use('/petition', require('./petition/routes'));
-
 router.use('/group', require('./group/routes'));
 
 router.use('/profile', require('./profile/routes'));
 
-exports.student = router;
+exports.officer = router;

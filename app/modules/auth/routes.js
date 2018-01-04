@@ -32,6 +32,10 @@ homepage.post('/', (req, res) =>{
             return res.redirect('/admin');
             
         }
+
+        if(user.varchar_userType == "Student" && user.varchar_userStatus == "Not Approved"){
+            return res.redirect('/home');
+        }
         if(user.varchar_userType == "Student"){
             delete user.varchar_userPassword;
             req.session.student = user;
@@ -39,12 +43,20 @@ homepage.post('/', (req, res) =>{
             console.log('Student: '+user.varchar_userEmailAdd);
             return res.redirect('/student');
         }
-        if(user.varchar_userType == "Org/Council"){
+    
+        if(user.varchar_userType == "Org/Council" && user.varchar_userStatus == "Approved"){
             delete user.varchar_userPassword;
             req.session.orgcouncil = user;
             console.log('Orgs/Council User:');
             console.log('Org/Council: '+user.varchar_userEmailAdd);
             return res.redirect('/orgcouncil');
+        }
+        if(user.varchar_userType == "Org/Council" && user.varchar_userStatus == "Not Approved"){
+            return res.redirect('/home');
+        }
+
+        if(user.varchar_userType == "Officer" && user.varchar_userStatus == "Not Approved"){
+            return res.redirect('/home');
         }
         if(user.varchar_userType == "Officer"){
             delete user.varchar_userPassword;
@@ -62,8 +74,8 @@ signup.get('/', (req,res) => {
 });
 signup.post('/', (req, res) => {
     
-    var queryString = `INSERT INTO \`tbl_user\` (\`varchar_userFName\`, \`varchar_userLName\`, \`varchar_userAddress\`,\`varchar_userEmailAdd\`, \`varchar_userPassword\`, \`varchar_userType\`)
-    VALUES("${req.body.user_fname}","${req.body.user_lname}","${req.body.user_address}", "${req.body.user_email}", "${req.body.user_password}","${req.body.user_usertype}");`;
+    var queryString = `INSERT INTO \`tbl_user\` (\`varchar_userFName\`, \`varchar_userLName\`, \`varchar_userAddress\`,\`varchar_userEmailAdd\`, \`varchar_userPassword\`, \`varchar_userType\`, \`varchar_userStatus\`)
+    VALUES("${req.body.user_fname}","${req.body.user_lname}","${req.body.user_address}", "${req.body.user_email}", "${req.body.user_password}","${req.body.user_usertype}","${req.body.user_status}");`;
     
     db.query(queryString, (err, results, fields) => {
         if (err) throw err;

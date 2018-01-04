@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2018 at 07:59 PM
+-- Generation Time: Jan 04, 2018 at 10:25 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.0.21
 
@@ -112,18 +112,19 @@ CREATE TABLE `tbl_user` (
   `varchar_userAddress` varchar(100) NOT NULL,
   `varchar_userEmailAdd` varchar(50) NOT NULL,
   `varchar_userPassword` varchar(50) NOT NULL,
-  `varchar_userType` varchar(11) NOT NULL
+  `varchar_userType` varchar(11) NOT NULL,
+  `varchar_userStatus` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`int_userID`, `varchar_userFName`, `varchar_userLName`, `varchar_userAddress`, `varchar_userEmailAdd`, `varchar_userPassword`, `varchar_userType`) VALUES
-(1, 'Abigale', 'Del Rosario', '13 Buli Muntinlupa City', 'admin@gmail.com', 'admin', 'Admin'),
-(8, 'Lyka', 'Punzalan', '9401 Alabang Muntinlupa City', 'lyka@gmail.com', 'lyka', 'Org/Council'),
-(10, 'Abbygail', 'Punzalan', '1281 Sucat Muntinlupa City', 'student@gmail.com', 'student', 'Student'),
-(11, 'Marlon ', 'Napiza', '193 Cupang Muntinlupa City', 'officer@gmail.com', 'officer', 'Officer');
+INSERT INTO `tbl_user` (`int_userID`, `varchar_userFName`, `varchar_userLName`, `varchar_userAddress`, `varchar_userEmailAdd`, `varchar_userPassword`, `varchar_userType`, `varchar_userStatus`) VALUES
+(1, 'Abigale', 'Del Rosario', '13 Buli Muntinlupa City', 'admin@gmail.com', 'admin', 'Admin', ''),
+(20, 'Organization', 'Council', '1232 Alabang Muntinlupa City', 'orgcouncil@gmail.com', 'orgcouncil', 'Org/Council', 'Not Approved'),
+(21, 'Officer', 'Class', '920 Cupang Muntinlupa City', 'officer@gmail.com', 'officer', 'Officer', 'Not Approved'),
+(22, 'Student', 'Irregular Regular', '501 Sucat Muntinlupa City', 'student@gmail.com', 'student', 'Student', 'Not Approved');
 
 --
 -- Indexes for dumped tables
@@ -212,7 +213,7 @@ ALTER TABLE `tbl_sched`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `int_userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `int_userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- Constraints for dumped tables
 --

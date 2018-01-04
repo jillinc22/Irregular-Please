@@ -1,0 +1,11 @@
+UPDATE:(4th attempt)
+-May varchar_userStatus na sa DB.
+-Pag di ka pa na-aaprove di ka pa makakalogin.(All users pwera sa admin).
+
+>Admin Nav
+-Sa requests pwede ng mag approve.(Students && Org/Council lang ang pwede i-approve dito, since si Org/Council yung mag aaprove for officers.)
+-May button na for reject?/not approved pero no action pa, pag clinick niyo yan lalabas kayo sa home pero yung session niyo admin pa rin.
+-May lists na rin: lists ng lahat ng user na nagsign up then info at status nila kung Not Approved or Approved.
+-Wala pa nung sa Org/Council na nav.(Di ko pa alam ilalagay)
+-Profile rin wala pa mas maganda kase to gawin ng may design na :(
+-Wala pa talagang design yan tables palang.

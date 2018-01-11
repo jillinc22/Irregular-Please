@@ -26,7 +26,7 @@ homepage.post('/', (req, res) =>{
         
         if(user.varchar_userType == "Admin"){
             delete user.varchar_userPassword;
-            req.session.admin = user;
+            req.session.user = user;
             console.log("Admin User:");
             console.log('Admin: '+user.varchar_userEmailAdd);
             return res.redirect('/admin');
@@ -38,7 +38,7 @@ homepage.post('/', (req, res) =>{
         }
         if(user.varchar_userType == "Student"){
             delete user.varchar_userPassword;
-            req.session.student = user;
+            req.session.user = user;
             console.log('Student User:');
             console.log('Student: '+user.varchar_userEmailAdd);
             return res.redirect('/student');
@@ -46,7 +46,7 @@ homepage.post('/', (req, res) =>{
     
         if(user.varchar_userType == "Org/Council" && user.varchar_userStatus == "Approved"){
             delete user.varchar_userPassword;
-            req.session.orgcouncil = user;
+            req.session.user = user;
             console.log('Orgs/Council User:');
             console.log('Org/Council: '+user.varchar_userEmailAdd);
             return res.redirect('/orgcouncil');
@@ -60,7 +60,7 @@ homepage.post('/', (req, res) =>{
         }
         if(user.varchar_userType == "Officer"){
             delete user.varchar_userPassword;
-            req.session.officer = user;
+            req.session.user = user;
             console.log('Officer User:');
             console.log('Officer: '+user.varchar_userEmailAdd);
             return res.redirect('/officer');

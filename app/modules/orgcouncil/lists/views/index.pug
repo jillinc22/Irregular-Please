@@ -1,4 +1,31 @@
 extends ../../home/views/navbar.pug
 
 block content
-    h1 Org Council Lists
+    link(rel="stylesheet" href="/stylesheets/admin.css")
+
+    <h2 style="font-family:myAcid;">&nbsp Lists of students and class officers:</h2>
+    <br>
+    <div class="container">
+    <table class="table table-hover table-sm" id="liststable">
+        <thead>
+            <tr>
+            <th>User ID</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>User Type</th>
+            <th>Email Address</th>
+            <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            each user in tbl_user
+                <tr>
+                td=user.int_userID    
+                td=user.varchar_userLName
+                td=user.varchar_userFName
+                td=user.varchar_userType
+                td=user.varchar_userEmailAdd
+                td=user.varchar_userStatus
+                </tr>
+    </table>
+    </div>

@@ -1,11 +1,16 @@
-UPDATE:(4th attempt)
--May varchar_userStatus na sa DB.
--Pag di ka pa na-aaprove di ka pa makakalogin.(All users pwera sa admin).
+UPDATE:(5th attempt) 
+> Org/Council Nav
+-may lists na (lists of students&class officers. di ko sinama sa lists yung students na part ng org/council since pag org/council kayo focus lang kayo sa members ng org niyo which is sa profile ko nalang ilalagay yung lists ng members ng org nila, as well as update ng info nila)
+-may requests na (approval of students & class officers, di sila pwedeng mag approve na ang usertype is "org/council" since admin lang yung sa ngayon pwedeng mag-approve sa members ng org)
 
->Admin Nav
--Sa requests pwede ng mag approve.(Students && Org/Council lang ang pwede i-approve dito, since si Org/Council yung mag aaprove for officers.)
--May button na for reject?/not approved pero no action pa, pag clinick niyo yan lalabas kayo sa home pero yung session niyo admin pa rin.
--May lists na rin: lists ng lahat ng user na nagsign up then info at status nila kung Not Approved or Approved.
--Wala pa nung sa Org/Council na nav.(Di ko pa alam ilalagay)
--Profile rin wala pa mas maganda kase to gawin ng may design na :(
--Wala pa talagang design yan tables palang.
+---Di ko na nasend yung 5th attempt wala kaming net nung mga araw na iyon XD
+
+UPDATE:(6th attempt)
+> Admin Nav
+- Profile(meron ng display & edit info)
+- Org/Council(Add ng org name & add ng org code)
+>The Rest User Nav
+- Profile(meron ng display & edit info)
+
+--May problem ako sa pag-add ng members of org dun sa tbl_org kaya di ko pa magalaw yung addschedule sa org/council na user
+--Wala pa rin design XD

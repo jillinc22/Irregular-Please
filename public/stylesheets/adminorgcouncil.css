@@ -1,0 +1,51 @@
+.btn {
+	letter-spacing: 1px;
+	text-decoration: none;
+	background: none;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+	font-size:14px;
+	line-height:20px;
+	font-weight:700;
+	/* text-transform:uppercase; */
+	border: 3px solid;
+    padding:8px 20px;
+    color:#B22222;
+    border-color: #B22222;
+}
+.btn:hover {
+    border-color: palegoldenrod;
+    color: #B22222;
+    text-transform:uppercase;
+}
+
+/* .modal-header {
+	padding-bottom: 5px;
+}
+
+.modal-footer {
+    	padding: 0;
+	}
+    
+.modal-footer .btn-group button {
+	height:40px;
+	border-top-left-radius : 0;
+	border-top-right-radius : 0;
+	border: none;
+	border-right: 1px solid #ddd;
+}
+	
+.modal-footer .btn-group:last-child > button {
+	border-right: 0;
+} */
+.form-control:focus{
+    border-color: #B22222;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255,0.0);
+}

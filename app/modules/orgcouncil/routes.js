@@ -15,5 +15,6 @@ router.use('/requests', require('./requests/routes'));
 router.use('/lists', require('./lists/routes'));
 
 router.use('/profile', require('./profile/routes'));
+router.use('/profile/editprofile', require('./profile/routes'));
 
 exports.orgcouncil = router;

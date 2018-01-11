@@ -10,5 +10,6 @@ router.use('/announcements', require('./announcements/routes'));
 router.use('/group', require('./group/routes'));
 
 router.use('/profile', require('./profile/routes'));
+router.use('/profile/editprofile', require('./profile/routes'));
 
 exports.officer = router;

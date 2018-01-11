@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2018 at 10:25 AM
+-- Generation Time: Jan 11, 2018 at 09:18 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.0.21
 
@@ -46,6 +46,14 @@ CREATE TABLE `tbl_org` (
   `int_orgMemb` int(11) NOT NULL DEFAULT '0',
   `char_orgCode` char(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_org`
+--
+
+INSERT INTO `tbl_org` (`int_orgID`, `varchar_orgName`, `int_orgMemb`, `char_orgCode`) VALUES
+(1, 'IBITS', 0, 'IBITS20182'),
+(2, 'JFINEX', 0, 'JFINEX2018');
 
 -- --------------------------------------------------------
 
@@ -122,9 +130,9 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`int_userID`, `varchar_userFName`, `varchar_userLName`, `varchar_userAddress`, `varchar_userEmailAdd`, `varchar_userPassword`, `varchar_userType`, `varchar_userStatus`) VALUES
 (1, 'Abigale', 'Del Rosario', '13 Buli Muntinlupa City', 'admin@gmail.com', 'admin', 'Admin', ''),
-(20, 'Organization', 'Council', '1232 Alabang Muntinlupa City', 'orgcouncil@gmail.com', 'orgcouncil', 'Org/Council', 'Not Approved'),
-(21, 'Officer', 'Class', '920 Cupang Muntinlupa City', 'officer@gmail.com', 'officer', 'Officer', 'Not Approved'),
-(22, 'Student', 'Irregular Regular', '501 Sucat Muntinlupa City', 'student@gmail.com', 'student', 'Student', 'Not Approved');
+(20, 'Angelika', 'Del Rosario', '1232 Alabang Muntinlupa City', 'orgcouncil@gmail.com', 'orgcouncil', 'Org/Council', 'Approved'),
+(21, 'Marlon ', 'Del Rosario', '920 Cupang Muntinlupa City', 'officer@gmail.com', 'officer', 'Officer', 'Approved'),
+(22, 'Mel', 'Del Rosario', '501 Sucat Muntinlupa City', 'student@gmail.com', 'student', 'Student', 'Approved');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +196,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_org`
 --
 ALTER TABLE `tbl_org`
-  MODIFY `int_orgID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `int_orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_orgmemb`
 --

@@ -6,11 +6,9 @@ router.use(authMiddleware.hasAuthOrgCouncil);
 router.use('/', require('./home/routes'));
 
 router.use('/schedule', require('./schedule/routes'));
-router.use('/schedule/addschedule', require('./schedule/routes'));
 
 router.use('/announcements', require('./announcements/routes'));
 
-router.use('/requests', require('./requests/routes'));
 
 router.use('/lists', require('./lists/routes'));
 

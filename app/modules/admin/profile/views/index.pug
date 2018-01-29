@@ -2,44 +2,7 @@ extends ../../home/views/navbar.pug
 
 block content
     link(rel="stylesheet" href="/stylesheets/adminprofile.css")
-    //- <h2 style="font-family:myAcid">&nbsp Admin Profile</h2>
-
-   
-        //- <h2> User ID:
-        //-     value= user.int_userID 
-        //- </h2>
-        //- <h2> First Name:
-        //-     value= user.varchar_userFName
-        //- </h2>
-    //- <div class = "container">
-    //- <div class="row">
-    //-     <div class="col-lg-5">
-    //-         <div class="media">
-    //-             <a class="pull-left" href="#">
-    //-                 <img class="media-object dp img-circle" src="/pics/life.jpg" style="width: 100px;height:100px;">
-    //-             </a>
-    //-             <div class="media-body">
-    //-             each user in tbl_user
-    //-                 <h4 class="media-heading">
-    //-                     value= user.varchar_userLName +", "
-    //-                     value= user.varchar_userFName
-    //-                 <small> 
-    //-                     value= user.varchar_userAddress
-    //-                 </small></h4>
-    //-                 <h5>Software Developer at <a href="http://gridle.in">Gridle.in</a></h5>
-    //-                 <hr style="margin:8px auto">
-
-    //-                 <span class="label label-default">HTML5/CSS3</span>
-    //-                 <span class="label label-default">jQuery</span>
-    //-                 <span class="label label-info">CakePHP</span>
-    //-                 <span class="label label-default">Android</span>
-    //-             </div>
-    //-         </div>
-    //-     </div>
-    //- </div>
-    //- </div>
-
-     <!--Pulling Awesome Font -->
+    
     each user in tbl_user
         //- <div class="container">
         <center>
@@ -108,8 +71,7 @@ block content
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                 </div>
                 <div class="modal-body">
-                    
-                    <!-- content goes here -->
+    
                     <form method="POST" action="profile/editprofile">
                     <div class="row">
                     <div class="form-group col-6">

@@ -14,7 +14,7 @@ block body
     //--Navigation Bar
     <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#B22222;font-family:myFrostys;">
     <a class="navbar-brand" href="/home">
-        <img src="/icons/calendar.png" width="30" height="30" class="d-inline-block align-top" alt="irregular please icon"> Irregular Please</a>
+        <img src="/icons/calendar.jpeg" width="30" height="30" class="d-inline-block align-top" alt="irregular please icon"> Irregular Please</a>
             <a class="nav-link" href="/home">Home </a>
             <a class="nav-link" href="#">Information</a>
             <a class="nav-link" href="#">AboutUs</a>
@@ -48,7 +48,7 @@ block body
             <div class="modal-body">
                 <form method="POST" action='home' name="login_form">
                     <div class="form-group">
-                    <p>&nbsp;<i class="fa fa-envelope-o fa-2x" aria-hidden="true" ></i>&nbsp;&nbsp;<input type="email" name="user_email" id="modalemail" class="form-control float-right col-md-10" placeholder="emailaddress@gmail.com" required></p>
+                    <p>&nbsp;<i class="fa fa-id-card fa-2x" aria-hidden="true" ></i>&nbsp;&nbsp;<input type="text" name="user_studno" id="modalstudno" class="form-control float-right col-md-10" placeholder="Student No(ex:2015-12345-MN-1)" required></p>
                     </div>
                     <p>&nbsp;&nbsp; <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>&nbsp; &nbsp;<input type="password" name="user_password" id="modalemail" class="form-control float-right col-md-10" placeholder="Password" size=33 required></p>
                     <p><button type="submit" id="modalbutton" class="btn btn-primary float-right" position="right" style="background-color:#B22222;color:whitesmoke;border:none;">Sign in</button></p>
@@ -56,11 +56,10 @@ block body
             </br>
             </br>
             </div>
-            <div class="modal-footer float-right">Don't have an account yet? <a href="#" class="Register" style="color:#B22222;"> Register</a>
+            <div class="modal-footer float-right">Don't have an account yet? <a href="/signup" class="Register" style="color:#B22222;"> Register</a>
             </div>
             </div>
     </div>
-
         //---- Registration Form
     <div class="container">
         <h1 class="well" style="font-family:myAcid;">Registration Form</h1>
@@ -69,6 +68,11 @@ block body
                     <form method="POST" action="/signup">
                         <div class="col-sm-12">
                             <div class="row">
+                                <div class="col-sm-8 form-group" >
+                                    <label style="font-family:myAcid;font-size:20;">*Student Number</label>
+                                    <input type="text" placeholder="" class="form-control" name="user_studno" id="user_studno" pattern="^(20?[0-1][0-7])+-+([0-9][0-9][0-9][0-9][0-9])+-+[M-Nm-n]+-+[0-1]" required>
+                                    <p><small><strong>Please use the student number format (<u>ex: 2007-12345-MN-1)</u></strong></small></p>
+                                </div>
                                 <div class="col-sm-6 form-group" >
                                     <label style="font-family:myAcid;font-size:20;">*First Name</label>
                                     <input type="text" placeholder="First Name" class="form-control" name="user_fname" required>
@@ -98,16 +102,23 @@ block body
                             <select required id="userType" class="form-control col-sm-8" name="user_usertype">
                                 <option disabled="disabled" selected="selected" value="">Choose...</option>
                                 <option value="Student">Student</option>
-                                <option value="Officer">Class Officer</option>
                                 <option value="Org/Council">Organization/Student Council</option>
                             </select>
                             <p><small><strong>(if you belong to one or more category PLEASE SELECT STUDENT AS THE <u>LEAST OPTION</u>)</strong></small></p>
                             </div>	
+
+                    <button type="submit" id="buttonsignup" class="btn btn btn-info" >Submit</button>					
+                    </div>
+
+                    script.
+                        var input = document.getElementById('user_studno');
+                        input.oninvalid = function(event) {
+                        event.target.setCustomValidity('Please use the student number format(ex: 2000-12345-MN-1)');}
+                        delete ${req.body.user_studno};
                         
-                        input(type="hidden" name="user_status" value="Not Approved")
-                        <button type="submit" id="buttonsignup" class="btn btn btn-info" >Submit</button>					
-                        </div>
                     </form> 
                     </div>
         </div>
         </div>
+
+        

@@ -1,0 +1,89 @@
+thead{
+    background: #b22222;
+    color: whitesmoke;
+}
+
+tr:hover{ 
+    background:#b22222; 
+}
+
+td{ 
+   
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 10px; 
+}
+
+.buttonviewadmin{
+    color:dimgray;
+}
+
+.buttonviewadmin:hover{
+    color: #BD3518;
+}
+
+/*=========================
+  Icons
+ ================= */
+
+/* footer social icons */
+ul.social-network {
+    list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
+
+
+/* footer social icons */
+#IdFooter .social-network a.edit:hover {
+	background-color: #BD3518;
+}
+
+
+
+#IdFooter .social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 35px;
+	height: 35px;
+	font-size:18px;
+}
+#IdFooter .social-circle li i {
+	margin:0;
+	line-height:38px;
+	text-align: center;
+}
+
+#IdFooter .social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+#IdFooter .social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+#IdFooter a {
+ background-color:dimgray;   
+}

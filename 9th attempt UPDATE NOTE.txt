@@ -1,0 +1,15 @@
+UPDATE:(9th attempt)
+>>Registration- ng student number:
+2000-2017 yung year sa unahan
+since wala pa naman students for 2018, malay niyo makalagay lang sila ng year para maaccept hahahaha XD
+*Accepted entries example/s:
+ex: 2000-05488-MN-0
+2017-12344-mn-1(for irreg students ata pag 1 yung dulo?)
+*Not Accepted entries:
+1999-05488-MN-0(since yung year is below 2000)
+2018-81921-MN-1(since yung year is lagpas 2017)
+2020-12345-MN-2(0 or 1 lang yung dulo ng student number)
+
+>>Login
+-student number na siya hindi na email yey XD
+

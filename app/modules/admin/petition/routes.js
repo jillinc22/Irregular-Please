@@ -5,17 +5,17 @@ var db = require('../../../lib/database')();
 
 router.get('/',(req, res) => {
     console.log('=================================');
-    console.log('ADMIN LISTS:');
+    console.log('ADMIN MANAGE SCHEDULES:');
     console.log('=================================');
    
-    var queryString =`SELECT * FROM tbl_user`
+    var queryString =`SELECT * FROM tbl_org`
     db.query(queryString, (err, results, fields) => {
         if (err) console.log(err);
         console.log(results);
-        res.render('admin/lists/views/index', {tbl_user:results});
+        res.render('admin/petition/views/index');
     });
 });
 
 
-// exports.home = homepage;
+
 module.exports = router;

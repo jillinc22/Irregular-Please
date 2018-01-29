@@ -1,5 +1,34 @@
 extends ../../home/views/navbar.pug
 
 block content
-    h2 Organization/Student Council Schedule (Create, Update)
-    <a href="/orgcouncil/schedule/addschedule" id="buttonAddClass" class="btn btn-primary" position="left" style="background-color:#B22222;color:whitesmoke;border:none;">Add a Schedule</a>
+    link(rel="stylesheet" href="/stylesheets/orgcouncilschedule.css")
+    link(rel="stylesheet" href="/stylesheets/admin.css")
+    <div class ="container-fluid">
+        h2 Manage Schedule
+        center
+            <a href="#" id="buttonAddClass" class="btn btn-outlined btn-sm" data-wow-delay="0.7s" position="left">Add a Schedule</a>
+    
+    <h2 style="font-family:myAcid;">&nbsp Lists of schedules:</h2>
+    <br>
+    <div class="container">
+    <table class="table table-hover table-sm" id="liststable">
+        <thead>
+            <tr>
+            <th>Course Title</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Room</th>
+            <th>Professor</th>
+            </tr>
+        </thead>
+        <tbody>
+            each sched in tbl_sched
+                <tr>
+                td=sched.varchar_courseTitle   
+                td=sched.varchar_schedDay
+                td=sched.varchar_schedTime
+                td=sched.varchar_schedRoom
+                td=sched.varchar_schedProf
+                </tr>
+    </table>
+    </div>

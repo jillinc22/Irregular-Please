@@ -33,7 +33,7 @@
 }
 
 .nav-link{
-    color: antiquewhite;
+    color:yellow;
     font-size: 19;
 }
 
@@ -52,11 +52,11 @@
 
 .carousel {
     width:900px;
-    height:450px;
+    height:900px;
 }
 
 .carousel-item {
-    height: 470px;
+    height: 900px;
     width: 900px;
   }
   

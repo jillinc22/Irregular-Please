@@ -41,36 +41,33 @@ block content
 
      <!--Pulling Awesome Font -->
     each user in tbl_user
-        //- <div class="container">
-        <center>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-4"></div>
-                        <div class="con col-md-4" style="">
-                            <div class="panel panel-default">
-                                <br>
+                <div class="col-md-4">
+                    <div class="con " style="">
+                                </br>
+                                <center>
                                 <div class="panel-heading"><h4>User Type: <small>
                                     <u>
                                     value= user.varchar_userType
                                     </u>
                                     </small>
-                                </h4>
-                                <h6>Org/Council Code:<small>
                                     
+                                //- <h6>Org/Council Code:<small>
+                                //-     value= user.char_orgCode
                                 </small>
                                 </h6>
                                 </div>
                                 <div class="panel-body text-left">
                                     <div class="row">
-                                        <div class="col-md-12 ">
+                                        <div class="col-12 ">
                                             <center>
                                                 <a>
                                                     <img class="media-object dp img-circle" src="/pics/orgcouncil.jpg"style="width: 180px;height:180px;">
                                                 </a>
                                             </center>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-12">
                                             <br>
                                             <h2>
                                                 value= user.varchar_userFName +" "
@@ -96,13 +93,12 @@ block content
                                         <li><u>Edit</u> &nbsp<a href="#" class="edit" title="Edit" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                    <div class="col-md-4"></div>
                     </div>
+                </div>
+                
             </div>
         </div>
-        </div>
+        
 
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -113,9 +109,14 @@ block content
                 </div>
                 <div class="modal-body">
                     
-                    <!-- content goes here -->
+        
                     <form method="POST" action="profile/editprofile">
+                        input(type="hidden" name="userid" value=`${user.int_userID}`)
                     <div class="row">
+                    <div class="form-group col-7">
+                        <label for="editorgcode">Org/Student Council Code</label>
+                        input(type="text" class="form-control" id="orgcode" placeholder="Org Code" name="orgcode")
+                    </div>
                     <div class="form-group col-6">
                         <label for="editfname">First Name</label>
                         input(type="text" class="form-control" id="editfname" placeholder="First Name" value=`${user.varchar_userFName}` name="user_fname")

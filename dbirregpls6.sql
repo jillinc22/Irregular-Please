@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2018 at 09:18 AM
+-- Generation Time: Jan 28, 2018 at 05:07 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.0.21
 
@@ -44,7 +44,7 @@ CREATE TABLE `tbl_org` (
   `int_orgID` int(11) NOT NULL,
   `varchar_orgName` varchar(50) NOT NULL,
   `int_orgMemb` int(11) NOT NULL DEFAULT '0',
-  `char_orgCode` char(10) DEFAULT NULL
+  `char_orgCode` char(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -53,7 +53,8 @@ CREATE TABLE `tbl_org` (
 
 INSERT INTO `tbl_org` (`int_orgID`, `varchar_orgName`, `int_orgMemb`, `char_orgCode`) VALUES
 (1, 'IBITS', 0, 'IBITS20182'),
-(2, 'JFINEX', 0, 'JFINEX2018');
+(2, 'JFINEX', 0, 'JFINEX2018'),
+(3, '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -63,9 +64,18 @@ INSERT INTO `tbl_org` (`int_orgID`, `varchar_orgName`, `int_orgMemb`, `char_orgC
 
 CREATE TABLE `tbl_orgmemb` (
   `int_orgMembID` int(11) NOT NULL,
-  `int_orgID` int(11) NOT NULL,
-  `int_userID` int(11) NOT NULL
+  `int_userID` int(11) NOT NULL,
+  `char_orgCode` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_orgmemb`
+--
+
+INSERT INTO `tbl_orgmemb` (`int_orgMembID`, `int_userID`, `char_orgCode`) VALUES
+(5, 28, ''),
+(7, 27, 'IBITS2018'),
+(8, 26, 'IBITS2018');
 
 -- --------------------------------------------------------
 
@@ -115,24 +125,27 @@ CREATE TABLE `tbl_sched` (
 
 CREATE TABLE `tbl_user` (
   `int_userID` int(11) NOT NULL,
+  `char_userStudNo` char(15) NOT NULL,
   `varchar_userFName` varchar(50) NOT NULL,
   `varchar_userLName` varchar(50) NOT NULL,
   `varchar_userAddress` varchar(100) NOT NULL,
   `varchar_userEmailAdd` varchar(50) NOT NULL,
   `varchar_userPassword` varchar(50) NOT NULL,
-  `varchar_userType` varchar(11) NOT NULL,
-  `varchar_userStatus` varchar(12) DEFAULT NULL
+  `varchar_userType` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`int_userID`, `varchar_userFName`, `varchar_userLName`, `varchar_userAddress`, `varchar_userEmailAdd`, `varchar_userPassword`, `varchar_userType`, `varchar_userStatus`) VALUES
-(1, 'Abigale', 'Del Rosario', '13 Buli Muntinlupa City', 'admin@gmail.com', 'admin', 'Admin', ''),
-(20, 'Angelika', 'Del Rosario', '1232 Alabang Muntinlupa City', 'orgcouncil@gmail.com', 'orgcouncil', 'Org/Council', 'Approved'),
-(21, 'Marlon ', 'Del Rosario', '920 Cupang Muntinlupa City', 'officer@gmail.com', 'officer', 'Officer', 'Approved'),
-(22, 'Mel', 'Del Rosario', '501 Sucat Muntinlupa City', 'student@gmail.com', 'student', 'Student', 'Approved');
+INSERT INTO `tbl_user` (`int_userID`, `char_userStudNo`, `varchar_userFName`, `varchar_userLName`, `varchar_userAddress`, `varchar_userEmailAdd`, `varchar_userPassword`, `varchar_userType`) VALUES
+(1, '2015-05488-MN-0', 'Abigale', 'Del Rosario', '13 Buli Muntinlupa City', 'admin@gmail.com', 'admin', 'Admin'),
+(20, '2014-06422-MN-0', 'Angelika', 'Del Rosario', '1232 Alabang Muntinlupa City', 'orgcouncil@gmail.com', 'orgcouncil', 'Org/Council'),
+(22, '2000-12345-MN-0', 'Mel', 'Del Rosario', '501 Sucat Muntinlupa City', 'student@gmail.com', 'student', 'Student'),
+(25, '2017-54321-MN-0', 'Abbygale', 'Punzalan', '13 Banana Island', 'abigale@gmail.com', 'miyaka13', 'Student'),
+(26, '2014-05488-MN-1', 'Abi ', 'Org', '13 ANONA', 'abigaled@gmail.com', 'miyaka13', 'Org/Council'),
+(27, '2013-05488-MN-1', 'Abigale ', 'Organization', '13 WHHHAAAAT', 'abigaledr13@gmail.com', 'miyaka13', 'Org/Council'),
+(28, '2001-05488-MN-0', 'ABIGALEEEE', 'DEL ROSAAAAAARIO', '13 WHAT GUMANA KA NA PLEASE', 'what@gmail.com', 'miyaka13', 'Org/Council');
 
 --
 -- Indexes for dumped tables
@@ -150,15 +163,17 @@ ALTER TABLE `tbl_course`
 --
 ALTER TABLE `tbl_org`
   ADD PRIMARY KEY (`int_orgID`),
-  ADD UNIQUE KEY `orgName` (`varchar_orgName`);
+  ADD UNIQUE KEY `orgName` (`varchar_orgName`),
+  ADD UNIQUE KEY `char_orgCode` (`char_orgCode`),
+  ADD KEY `char_orgCode_2` (`char_orgCode`);
 
 --
 -- Indexes for table `tbl_orgmemb`
 --
 ALTER TABLE `tbl_orgmemb`
   ADD PRIMARY KEY (`int_orgMembID`),
-  ADD KEY `user_idx` (`int_userID`),
-  ADD KEY `org_idx` (`int_orgID`);
+  ADD UNIQUE KEY `int_userID` (`int_userID`),
+  ADD KEY `user_idx` (`int_userID`);
 
 --
 -- Indexes for table `tbl_petition`
@@ -186,7 +201,9 @@ ALTER TABLE `tbl_sched`
 --
 ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`int_userID`),
-  ADD UNIQUE KEY `userEmailAdd` (`varchar_userEmailAdd`);
+  ADD UNIQUE KEY `userEmailAdd` (`varchar_userEmailAdd`),
+  ADD UNIQUE KEY `varchar_userEmailAdd` (`varchar_userEmailAdd`),
+  ADD UNIQUE KEY `char_userStudNo` (`char_userStudNo`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -196,12 +213,12 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_org`
 --
 ALTER TABLE `tbl_org`
-  MODIFY `int_orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `int_orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_orgmemb`
 --
 ALTER TABLE `tbl_orgmemb`
-  MODIFY `int_orgMembID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `int_orgMembID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tbl_petition`
 --
@@ -221,7 +238,7 @@ ALTER TABLE `tbl_sched`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `int_userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `int_userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- Constraints for dumped tables
 --
@@ -230,7 +247,6 @@ ALTER TABLE `tbl_user`
 -- Constraints for table `tbl_orgmemb`
 --
 ALTER TABLE `tbl_orgmemb`
-  ADD CONSTRAINT `org` FOREIGN KEY (`int_orgID`) REFERENCES `tbl_org` (`int_orgID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `user` FOREIGN KEY (`int_userID`) REFERENCES `tbl_user` (`int_userID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

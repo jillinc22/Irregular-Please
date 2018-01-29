@@ -11,7 +11,6 @@ router.use('/schedule', require('./schedule/routes'));
 
 router.use('/petition', require('./petition/routes'));
 
-router.use('/group', require('./group/routes'));
 
 router.use('/profile', require('./profile/routes'));
 router.use('/profile/editprofile', require('./profile/routes'));

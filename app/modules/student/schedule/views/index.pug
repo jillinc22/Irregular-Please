@@ -1,4 +1,32 @@
 extends ../../home/views/navbar.pug
 
 block content
-    h1 Student Schedule
+    link(rel="stylesheet" href="/stylesheets/studentschedule.css")
+    link(rel="stylesheet" href="/stylesheets/w3school.css")
+
+
+    <div id="background" class="blur"></div>
+        <div id="conta1" class = "container w3-animate-bottom">
+        <div class="row">
+        <div class="col-md-5 w3-panel w3-leftbar w3-border-gray w3-pale-black">
+            <h2>Search a Schedule</h2>
+        </div>
+        </div>
+        <div class="row">
+        <div id="searchtext" class="col-md-12 w3-panel w3-leftbar w3-border-black w3-pale-black ">
+            <h4>By Course Code:</h2>
+            <form method="POST" action="schedule/search_course">
+            <div class="search">
+                <input type="text" class="form-control input-sm" maxlength="15" placeholder="Search" name="course_search" required/>
+                    <button type="submit" class="btn btn-primary btn-sm">Search</button>
+            </div>
+            </form>
+            //- each course in search_course
+            //-     <div class="container searchcourse">
+            //-     h1
+            //-         value=course.char_courseCode
+            //-         value=course.varchar_schedDay
+            //-     </div>
+        </div>
+        </div>
+    </div>

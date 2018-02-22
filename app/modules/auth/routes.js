@@ -52,7 +52,7 @@ homepage.post('/', (req, res) =>{
             req.session.user = user;
             console.log('Student User:');
             console.log('Student: '+user.varchar_userEmailAdd);
-            return res.redirect('/student');
+            return res.redirect('/student/announcements');
         }
     
         if(user.varchar_userType == "Org/Council"){
@@ -60,7 +60,7 @@ homepage.post('/', (req, res) =>{
             req.session.user = user;
             console.log('Orgs/Council User:');
             console.log('Org/Council: '+user.varchar_userEmailAdd);
-            return res.redirect('/orgcouncil');
+            return res.redirect('/orgcouncil/announcements');
         }
 
     });

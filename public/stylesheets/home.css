@@ -85,3 +85,15 @@
     color: #B22222;
 }
 
+#cent{
+    text-align: center;
+    width: 1365px;
+    height: 450px;
+    background: #fff;
+		color: input-text-color;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(.1, 0, 0 , .1);
+		border: 0;
+		outline: 0;
+		padding: 22px 18px;
+    }

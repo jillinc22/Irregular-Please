@@ -8,6 +8,8 @@ router.use('/', require('./home/routes'));
 router.use('/announcements', require('./announcements/routes'));
 
 router.use('/schedule', require('./schedule/routes'));
+router.use('/schedule/search_course', require('./schedule/routes'));
+
 
 router.use('/petition', require('./petition/routes'));
 

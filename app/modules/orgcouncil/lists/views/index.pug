@@ -2,28 +2,25 @@ extends ../../home/views/navbar.pug
 
 block content
     link(rel="stylesheet" href="/stylesheets/admin.css")
-
-    <h2 style="font-family:myAcid;">&nbsp Lists of students and class officers:</h2>
-    <br>
-    <div class="container">
-    <table class="table table-hover table-sm" id="liststable">
-        <thead>
-            <tr>
-            <th>User ID</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>User Type</th>
-            <th>Email Address</th>
-            </tr>
-        </thead>
-        <tbody>
+    link(rel="stylesheet" href="/stylesheets/orglists.css")
+    link(rel="stylesheet" href="/stylesheets/w3school.css")
+    #background.blur
+    #conta1.container.w3-animate-bottom
+        h2 &nbsp Lists of students:
+        br
+        table#liststable.table.table-hover.table-sm
+            thead
+                tr
+                    th User ID
+                    th Last Name
+                    th First Name
+                    th User Type
+                    th Email Address
+            tbody
             each user in tbl_user
-                <tr>
-                td=user.int_userID    
-                td=user.varchar_userLName
-                td=user.varchar_userFName
-                td=user.varchar_userType
-                td=user.varchar_userEmailAdd
-                </tr>
-    </table>
-    </div>
+                tr
+                        td=user.int_userID
+                        td=user.varchar_userLName
+                        td=user.varchar_userFName
+                        td=user.varchar_userType
+                        td=user.varchar_userEmailAdd

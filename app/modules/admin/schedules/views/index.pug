@@ -2,9 +2,26 @@ extends ../../home/views/navbar.pug
 
 block content
    
-    
-    link(rel="stylesheet" href="/stylesheets/admin.css")
-    link(rel="stylesheet" href="/stylesheets/adminorgcouncil.css")
+    link(rel="stylesheet" href="/stylesheets/adminschedule.css")
 
-    <h2>&nbsp Schedules</h2>
+    <div class="container">
+    <h2 style="margin:2%;">&nbsp Lists of Schedule:</h2>
+    <div class="row">
+            each sched in tbl_sched
+                <div id="container2">
+                h5
+                    <b>
+                    value=sched.char_courseCode
+                    </b>
+                p
+                    value=sched.varchar_schedDay
+                    </br>
+                    value=sched.varchar_schedTime
+                    </br>
+                    value=sched.varchar_schedRoom
+                    </br>
+                    value=sched.varchar_schedProf
+                </div>
+            </div>
+    </div>
     

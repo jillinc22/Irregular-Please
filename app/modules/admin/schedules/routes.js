@@ -8,11 +8,11 @@ router.get('/',(req, res) => {
     console.log('ADMIN MANAGE SCHEDULES:');
     console.log('=================================');
    
-    var queryString =`SELECT * FROM tbl_org`
+    var queryString =`SELECT * FROM tbl_sched`
     db.query(queryString, (err, results, fields) => {
         if (err) console.log(err);
         console.log(results);
-        res.render('admin/schedules/views/index');
+        res.render('admin/schedules/views/index',{tbl_sched:results});
     });
 });
 

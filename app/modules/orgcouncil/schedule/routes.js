@@ -8,39 +8,38 @@ router.get('/',(req, res) => {
     console.log('=================================');
     console.log('Pumasok sa orgcouncil schedule');
     console.log('=================================');
-    
-    db.query('SELECT varchar_courseTitle, varchar_schedDay, varchar_schedTime, varchar_schedRoom, varchar_schedProf FROM tbl_sched INNER JOIN tbl_course ON tbl_sched.char_courseCode=tbl_course.char_courseCode', (err, results, fields) => {
-        if (err) console.log(err)
-        return res.render('orgcouncil/schedule/views/index', { tbl_sched: results });
+    var queryString =`SELECT * FROM tbl_sched`
+    db.query(queryString, (err, results, fields) => {
+        if (err) console.log(err);
+        console.log(results);
+        var tbl_sched=results;
+        req.session.tbl_sched=tbl_sched;
+        return res.render('orgcouncil/schedule/views/index', { tbl_sched: results,user:req.session.user });
     });
 });
 
-router.post('/', (req, res) => {
-    var queryString = `tbl_sched INNER JOIN tbl_course ON tbl_sched.char_courseCode=tbl_course.char_courseCode(
-    \`varchar_courseTitle\`,
+router.post('/addschedule', (req, res) => {
+    var queryString = `INSERT INTO \`tbl_sched\` 
+    (\`char_courseCode\`, 
     \`varchar_schedDay\`,
     \`varchar_schedTime\`,
     \`varchar_schedRoom\`,
-    \`varchar_schedProf\`)  
+    \`varchar_schedProf\`)
+    VALUES
+    ("${req.body.sched_code}",
+    "${req.body.sched_days}",
+    "${req.body.sched_time}",
+    "${req.body.sched_room}",
+    "${req.body.sched_prof}");`;
     
     
-    VALUES(
-    "${req.body.coursetitle}",
-    "${req.body.schedday}",
-    "${req.body.schedtime}",
-    "${req.body.schedroom}",
-    "${req.body.schedprof}")`;
    
 
     db.query(queryString, (err, results, fields) => {        
         if (err) throw err;
-        res.redirect('orgcouncil/schedule');
+        res.redirect('/orgcouncil/schedule');
     });
 });
 
-
-module.exports = router;
-
-module.exports = router;
 
 module.exports = router;

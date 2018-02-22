@@ -116,7 +116,7 @@ ul.social-network li {
 }
 
 #IdFooter a {
- background-color: #D3D3D3;   
+ background-color: #B22222;   
 }
 
 .container-fluid{
@@ -124,10 +124,12 @@ ul.social-network li {
 }
 
 .con{
-        box-shadow: 10px 10px 5px grey;
-        -webkit-box-shadow: 0 0 10px 3px grey;
+        /* box-shadow: 10px 10px 5px grey; */
+        -webkit-box-shadow: 0 0 3px 3px grey;
         /* box-shadow: 0 0 10px grey; */
-        margin: 10px;
+		margin: 10px;
+		/* background-color: black;
+		filter: opacity(73%); */
 }
 
 .modal-header {
@@ -161,3 +163,13 @@ ul.social-network li {
     border-color: #B22222;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255,0.0);
 }
+
+
+#background {
+    background-image: url('/pics/profile3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 130%;
+    max-width: 100%;
+    height: 100%;
+}
+

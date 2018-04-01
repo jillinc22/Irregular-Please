@@ -1,63 +1,43 @@
-@font-face{ 
-    font-family: myAcid; 
-    src: url("/fonts/Acid.ttf");
-} 
-.media
-{
-        /*box-shadow:0px 0px 4px -2px #000;*/
-        margin: 20px 0;
-        padding:30px;
+#navbar {
+    overflow: hidden;
+    background-color: #b22222;
 }
-.dp
-{
-        border:5px solid #B22222;
-        transition: all 0.2s ease-in-out;
-}
-.dp:hover
-{
-        border:2px solid #B22222;
-        transform:rotate(360deg);
-        -ms-transform:rotate(360deg);  
-        -webkit-transform:rotate(360deg);  
-        /*-webkit-font-smoothing:antialiased;*/
-} */
 
-.panel-heading {
-    padding: 10px 15px;
-    background-color: #353535;
-    border-top: 1px solid black;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
+.nav-menu > li > a:before {
+    content: "";
     position: absolute;
-    top: 0%;
-    cursor:pointer;
-    opacity:0.8;
-    color:white;
-    border:none;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
 }
 
-.panel-body {
-    padding: 30px 4% 5% 7%;
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.box {
-    padding:2%;
-    border:1px #ddd solid;
-    cursor:pointer;
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
 }
 
-
-.remove-decoration {
-    text-decoration:none !important;
-    color:#333;
-    font-size:12px;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
 
-/*=========================
-  Icons
- ================= */
-
-/* footer social icons */
 ul.social-network {
     list-style: none;
 	display: inline;
@@ -119,39 +99,6 @@ ul.social-network li {
  background-color: #B22222;   
 }
 
-.container-fluid{
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.con{
-        /* box-shadow: 10px 10px 5px grey; */
-        -webkit-box-shadow: 0 0 3px 3px grey;
-        /* box-shadow: 0 0 10px grey; */
-		margin: 10px;
-		/* background-color: black;
-		filter: opacity(73%); */
-}
-
-.modal-header {
-	padding-bottom: 5px;
-}
-
-.modal-footer {
-    	padding: 0;
-	}
-    
-.modal-footer .btn-group button {
-	height:40px;
-	border-top-left-radius : 0;
-	border-top-right-radius : 0;
-	border: none;
-	border-right: 1px solid #ddd;
-}
-	
-.modal-footer .btn-group:last-child > button {
-	border-right: 0;
-}
-
 #buttoneditprofile{
     background-color: #B22222;
     color: whitesmoke;
@@ -165,11 +112,22 @@ ul.social-network li {
 }
 
 
-#background {
-    background-image: url('/pics/profile3.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 130%;
-    max-width: 100%;
-    height: 100%;
+.container{
+    border: 3px solid;
+    padding:8px;
+    border-color:transparent;
+    background-color: black;
+    filter: opacity(73%);
+    color: white;
 }
 
+#conta1{
+    /* margin: auto; */
+    margin-top: 1%;
+    height: 90%;
+    width: 90%;
+    z-index: 10;
+    border-radius: 10px;
+    color: white;
+    overflow-y: scroll;
+}

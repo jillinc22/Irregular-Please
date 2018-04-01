@@ -1,13 +1,22 @@
 var express = require('express');
 var router = express.Router();
-// var router = require('express').Router();
 var authMiddleware = require('../../auth/middlewares/auth');
+var db = require('../../../lib/database')();
+
+
 
 router.get('/',(req, res) => {
     console.log('=================================');
     console.log('Pumasok sa student announcements');
     console.log('=================================');
-    res.render('student/announcements/views/index');
+    var queryString ='SELECT * FROM tbl_announcement'
+    db.query(queryString, (err, results, fields) => {
+        if (err) console.log(err);
+        console.log(results);
+        // var tbl_announcement=results;
+        // req.session.tbl_announcement=tbl_announcement;
+        return res.render('student/announcements/views/index', { tbl_announcement: results, user:req.session.user });
+    });
 });
 
 

@@ -1,99 +1,19 @@
-@font-face{ 
-    font-family: myFrostys; 
-    src: url("/fonts/Frostys.ttf");
-} 
-@font-face{ 
-    font-family: myAcid; 
-    src: url("/fonts/Acid.ttf");
-} 
-@font-face{ 
-    font-family: myElegantLight; 
-    src: url("/fonts/ElegantLight.ttf");
-} 
-
-.navbar-brand{
-    font-size: 25;
-    font-family: myFrostys;
-    color: antiquewhite;
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.navbar-nav{
-    font-family: myAcid;
-    font-size: 19;
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
 }
 
-#navtextaccount{
-    color: whitesmoke;
-    font-size: 13.5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
-
-.navbar-brand:hover{
-    color:palegoldenrod;
-}
-
-.nav-link{
-    color:yellow;
-    font-size: 19;
-}
-
-.nav-link:hover{
-    color:palegoldenrod;
-}
-
-#login{
-    position:right;
-    color:yellow;
-}
-
-#login:hover{
-    color: palegoldenrod;
-}
-
-.carousel {
-    width:900px;
-    height:900px;
-}
-
-.carousel-item {
-    height: 900px;
-    width: 900px;
-  }
-  
-.item img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-height: 300px;
-      object-fit:cover;
-      height:300px !important;
-      width:350px;
-}
-
-.card{
-    /* background-color: */
-    color: #B22222;
-}
-
-.card-header{
-   font-size: 29;
-   background-color: transparent;
-}
-
-.text-mutedd{
-    font-size: 22;
-    color: #B22222;
-}
-
-#cent{
-    text-align: center;
-    width: 1365px;
-    height: 450px;
-    background: #fff;
-		color: input-text-color;
-		font: inherit;
-		box-shadow: 0 6px 10px 0 rgba(.1, 0, 0 , .1);
-		border: 0;
-		outline: 0;
-		padding: 22px 18px;
-    }

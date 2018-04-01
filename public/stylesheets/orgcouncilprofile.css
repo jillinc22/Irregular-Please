@@ -1,7 +1,4 @@
-@font-face{ 
-    font-family: myAcid; 
-    src: url("/fonts/Acid.ttf");
-} 
+
 .media
 {
         /*box-shadow:0px 0px 4px -2px #000;*/
@@ -163,10 +160,29 @@ ul.social-network li {
 }
 
 #background {
-    background-image: url('/pics/profile3.jpg');
     background-repeat: no-repeat;
     background-size: 100% 130%;
     max-width: 100%;
     height: 100%;
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #b22222;
+}
+
+.nav-menu > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
 }
 
